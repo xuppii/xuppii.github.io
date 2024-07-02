@@ -1,0 +1,21 @@
+#question-container {
+    margin: 20px;
+}
+#question {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.answer-button {
+    display: inline-block; /* Changed to inline-block to align horizontally */
+    margin: 5px 1px; /* Adjust margins as needed */
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}
