@@ -6,8 +6,8 @@
     margin-bottom: 10px;
 }
 .answer-button {
-    display: inline-block; /* Changed to inline-block to align horizontally */
-    margin: 5px 1px; /* Adjust margins as needed */
+    display: inline-block; 
+    margin: 5px 1px; 
     padding: 10px;
     font-size: 1em;
     cursor: pointer;
@@ -18,4 +18,23 @@
 }
 .visible {
     display: block;
+}
+
+.image{
+    max-width: 90%;
+    max-height: 90%;
+}
+.image-container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+}
+.restart-text{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.color{
+    background-color: rgb(255, 255, 192);
 }

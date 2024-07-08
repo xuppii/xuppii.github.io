@@ -1,4 +1,4 @@
-// Array of questions
+
 document.getElementById('startButton').onclick = () => {
     document.getElementById('home').classList.replace('visible', 'hidden');
     document.getElementById('question-container').classList.replace('hidden', 'visible');
@@ -42,6 +42,7 @@ let mbti = "aaaa"
 function loadQuestion(index) {
     const questionContainer = document.getElementById('question');
     const answersContainer = document.getElementById('answers');
+    const resultsConatiner = document.getElementById('result')
 
     // Clear previous question and answers
     questionContainer.innerHTML = '';
@@ -57,7 +58,7 @@ function loadQuestion(index) {
         button.className = 'answer-button';
         button.innerText = answer.text;
         button.onclick = () => {
-            // Load the next question or show a message if it was the last one
+
             selectedAnswers[index] = answer.value
             if (currentQuestionIndex < questions.length - 1) {
                 currentQuestionIndex++;
@@ -98,16 +99,20 @@ function loadQuestion(index) {
                         }
                     }
                 })
-                questionContainer.innerText = mbti;
+                document.getElementById('question-container').classList.replace('visible', 'hidden');
+                document.getElementById('result').classList.replace('hidden', 'visible');
+                //questionContainer.innerText = mbti;
                 answersContainer.innerHTML = '';
-                const button = document.createElement('button');
-                button.className = 'answer-button';
-                button.innerText = "Restart";
-                button.onclick = () => {
+                const button_result = document.getElementById('restart-button');
+                //button_result.className = 'answer-button';
+                //button_result.innerText = "Restarttttt";
+                button_result.onclick = () => {
                     currentQuestionIndex = 0;
+                    document.getElementById('result').classList.replace('visible', 'hidden');
+                    document.getElementById('home').classList.replace('hidden', 'visible');
                     loadQuestion(currentQuestionIndex);
                 }
-                answersContainer.appendChild(button);
+                //resultsConatiner.appendChild(button_result);
             }
         };
         answersContainer.appendChild(button);

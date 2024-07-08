@@ -6,7 +6,7 @@
     <title>egg</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="color">
     <div id="home" class="visible">
         <h1>what egg are u</h1>
         <button id="startButton">click</button>
@@ -15,7 +15,15 @@
         <div id="question"></div>
         <div id="answers"></div>
     </div>
-
+    <div id="result" class ="hidden">
+        <div class="image-container">
+            <img src="century.jpg" class="image">
+        </div>
+        <div class="restart-text">
+            <button class="answer-button" id="restart-button">Restart</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
