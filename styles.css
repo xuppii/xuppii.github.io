@@ -77,11 +77,25 @@ body, html {
 .egg-button img {
     width: 100px;
     height: auto; /* Maintain aspect ratio */
+    animation: shake 0.3s infinite; 
+    /* animation-iteration-count: infinite;  */
+    /* animation-timing-function: ease-in-out;  */
+    animation-play-state: paused;
 }
 
 .egg-button img:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
     transition: transform 0.3s;
+    animation-play-state:paused;
+}
+
+@keyframes shake {
+    0% { transform: translate(-1px) rotate(-2deg); }
+    20% { transform: translate(-1px) rotate(-1deg); }
+    40% { transform: translate(-1px) rotate(-1deg); }
+    60% { transform: translate(1px) rotate(1deg); }
+    80% { transform: translate(1px) rotate(1deg); }
+    100% { transform: translate(1px) rotate(2deg); }
 }
 
 /* .egg-button {

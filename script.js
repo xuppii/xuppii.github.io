@@ -130,5 +130,27 @@ function replaceChar(str, index, char) {
 function hoverImg(element, imgSrc) {
     element.querySelector('img').src = imgSrc;
 }
+function shakePeriodically() {
+    const egg = document.querySelector('.egg-button img');
+    if(!egg.matches(':hover')){
+        egg.style.animationPlayState = 'running';
+    }
+    setTimeout(() => {
+        if(!egg.matches(':hover')){
+            egg.style.animationPlayState = 'paused';
+        }
+    }, 2000); // Duration of the shake
+}
+
+// Shake the egg every 5 seconds
+const egg = document.querySelector('.egg-button img');
+egg.addEventListener('mouseenter', () => {
+    egg.style.animationPlayState = 'paused';
+});
+egg.addEventListener('mouseleave', () => {
+    shakePeriodically(); // Resume shaking immediately after hover ends
+});
+
+setInterval(shakePeriodically, 3000);
 // Load the first question initially
 loadQuestion(currentQuestionIndex);
