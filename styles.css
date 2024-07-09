@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 #question-container {
     margin: 20px;
 }
@@ -12,7 +14,10 @@
     font-size: 1em;
     cursor: pointer;
 }
-
+h1{
+    margin:0px;
+    font-size:26px;
+}
 .hidden {
     display: none;
 }
@@ -29,6 +34,7 @@
     justify-content:center;
     align-items: center;
     height: 90vh; 
+    padding-top: 10px;
 }
 .restart-text{
     display:flex;
@@ -38,3 +44,56 @@
 .color{
     background-color: rgb(255, 255, 192);
 }
+.home-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.center-answers{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%;
+    flex-direction: column;
+}
+.center{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto';
+}
+.egg-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.egg-button img {
+    width: 100px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.egg-button img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    transition: transform 0.3s;
+}
+
+/* .egg-button {
+    background-image: url('egg_mystery.png');
+    width: 150px;
+    height: 200px;
+    background-size: cover; 
+    background-position: center; 
+    border: 2px solid #d4a017;
+    border-radius: 50% / 60%; 
+    cursor: pointer;
+    outline: none;
+    transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    
+} */

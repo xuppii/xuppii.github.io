@@ -1,7 +1,9 @@
 
 document.getElementById('startButton').onclick = () => {
     document.getElementById('home').classList.replace('visible', 'hidden');
+    document.getElementById('home').classList.replace('center', 'hidden');
     document.getElementById('question-container').classList.replace('hidden', 'visible');
+    document.getElementById('question-container').classList.add('center-answers');
     loadQuestion(currentQuestionIndex);
 };
 
@@ -100,6 +102,7 @@ function loadQuestion(index) {
                     }
                 })
                 document.getElementById('question-container').classList.replace('visible', 'hidden');
+                document.getElementById('question-container').classList.replace('center-answers', 'hidden');
                 document.getElementById('result').classList.replace('hidden', 'visible');
                 //questionContainer.innerText = mbti;
                 answersContainer.innerHTML = '';
@@ -110,6 +113,7 @@ function loadQuestion(index) {
                     currentQuestionIndex = 0;
                     document.getElementById('result').classList.replace('visible', 'hidden');
                     document.getElementById('home').classList.replace('hidden', 'visible');
+                    document.getElementById('home').classList.add('center');
                     loadQuestion(currentQuestionIndex);
                 }
                 //resultsConatiner.appendChild(button_result);
@@ -122,6 +126,9 @@ function replaceChar(str, index, char) {
     let strArray = str.split('');
     strArray[index] = char;
     return strArray.join('');
+}
+function hoverImg(element, imgSrc) {
+    element.querySelector('img').src = imgSrc;
 }
 // Load the first question initially
 loadQuestion(currentQuestionIndex);

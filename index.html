@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="color">
-    <div id="home" class="visible">
-        <h1>what egg are u</h1>
-        <button id="startButton">click</button>
+    <div id="home" class="visible center">
+        <div class="home-text">
+            <h1>what egg are u?</h1>
+            <button id="startButton" class="egg-button" onmouseover="hoverImg(this,'egg_crack.png')" onmouseout="hoverImg(this,'egg_mystery.png')">
+                <img src="egg_mystery.png">
+            </button>
+        </div>
     </div>
-    <div id="question-container" class="hidden">
+    <div id="question-container" class="hidden center-answers">
         <div id="question"></div>
         <div id="answers"></div>
     </div>
