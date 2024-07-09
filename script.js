@@ -102,7 +102,7 @@ function loadQuestion(index) {
                     }
                 })
                 document.getElementById('question-container').classList.replace('visible', 'hidden');
-                document.getElementById('question-container').classList.replace('center-answers', 'hidden');
+                document.getElementById('question-container').classList.remove('center-answers');
                 document.getElementById('result').classList.replace('hidden', 'visible');
                 //questionContainer.innerText = mbti;
                 answersContainer.innerHTML = '';
