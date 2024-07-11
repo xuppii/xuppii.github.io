@@ -40,7 +40,9 @@ const questions = [
 
 let currentQuestionIndex = 0;
 let selectedAnswers = []
-let mbti = "aaaa"
+//let mbti = "aaaa"
+let mbti_numbers = [0,0,0,0]
+
 function loadQuestion(index) {
     const questionContainer = document.getElementById('question');
     const answersContainer = document.getElementById('answers');
@@ -69,43 +71,56 @@ function loadQuestion(index) {
 
                 selectedAnswers.forEach((value,i) => {
                     if(i == 0){
-                        if(value == 1){
-                            mbti = replaceChar(mbti, i, 'E');
+                        if(value > 0){
+                            mbti_numbers[0]++;
+                            //mbti = replaceChar(mbti, i, 'E');
                         }
-                        else if(value == -1){
-                            mbti = replaceChar(mbti, i, 'I');
+                        else if(value < 0){
+                            mbti_numbers[0]--;
+                            //mbti = replaceChar(mbti, i, 'I');
                         }
                     }
                     else if(i == 1){
-                        if(value == 1){
-                            mbti = replaceChar(mbti, i, 'S');
+                        if(value > 0){
+                            mbti_numbers[1]++;
+                            //mbti = replaceChar(mbti, i, 'S');
                         }
-                        else if(value == -1){
-                            mbti = replaceChar(mbti, i, 'N');
+                        else if(value < 0){
+                            mbti_numbers[1]--;
+                            //mbti = replaceChar(mbti, i, 'N');
                         }
                     }
                     else if(i == 2){
-                        if(value == 1){
-                            mbti = replaceChar(mbti, i, 'T');
+                        if(value > 0){
+                            mbti_numbers[2]++;
+                            //mbti = replaceChar(mbti, i, 'T');
                         }
-                        else if(value == -1){
-                            mbti = replaceChar(mbti, i, 'F');
+                        else if(value < 0){
+                            mbti_numbers[2]--;
+                            //mbti = replaceChar(mbti, i, 'F');
                         }
                     }
                     else if(i == 3){
-                        if(value == 1){
-                            mbti = replaceChar(mbti, i, 'J');
+                        if(value > 0){
+                            mbti_numbers[3]++;
+                            //mbti = replaceChar(mbti, i, 'J');
                         }
-                        else if(value == -1){
-                            mbti = replaceChar(mbti, i, 'P');
+                        else if(value < 0){
+                            mbti_numbers[3]--;
+                            //mbti = replaceChar(mbti, i, 'P');
                         }
                     }
                 })
+                console.log(mbti_numbers);
+                //let mbti = mbti_calculate(mbti_numbers);
                 document.getElementById('question-container').classList.replace('visible', 'hidden');
                 document.getElementById('question-container').classList.remove('center-answers');
                 document.getElementById('result').classList.replace('hidden', 'visible');
                 //questionContainer.innerText = mbti;
+                //console.log(mbti);
+
                 answersContainer.innerHTML = '';
+                mbti_numbers = [0,0,0,0]
                 const button_result = document.getElementById('restart-button');
                 //button_result.className = 'answer-button';
                 //button_result.innerText = "Restarttttt";
@@ -121,6 +136,19 @@ function loadQuestion(index) {
         };
         answersContainer.appendChild(button);
     });
+}
+function mbti_calculate(array)
+{
+    let mbti;
+    array.forEach((value,i) =>
+    {
+        if(i == 0)
+        {
+            if(value > 0){
+                mbti.append("E")
+            }
+        }
+    })
 }
 function replaceChar(str, index, char) {
     let strArray = str.split('');
@@ -139,7 +167,7 @@ function shakePeriodically() {
         if(!egg.matches(':hover')){
             egg.style.animationPlayState = 'paused';
         }
-    }, 2000); // Duration of the shake
+    }, 1000); // Duration of the shake
 }
 
 // Shake the egg every 5 seconds
@@ -151,6 +179,6 @@ egg.addEventListener('mouseleave', () => {
     shakePeriodically(); // Resume shaking immediately after hover ends
 });
 
-setInterval(shakePeriodically, 3000);
+setInterval(shakePeriodically, 1500);
 // Load the first question initially
 loadQuestion(currentQuestionIndex);
