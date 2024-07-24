@@ -43,6 +43,55 @@ const questions = [
             { text: "“Of course!” You are excited to see a new life be born into this world.", value: -1 }
         ]
     },
+    {
+        question: "You take the egg from the chicken to place it into the car before helping the chicken into the car.",
+        answers: [
+            { text: "I want to get this over with so I can continue on with my day.", value: 1 },
+            { text: "This is such a fun detour! I wonder how it will turn out.", value: -1 }
+        ]
+    },
+    {
+        question: "the egg starts to shake visibly in the chickens arms. oh no! i think itll hatch at any moment!! how do you respond?",
+        answers: [
+            { text: "you start getting really anxious, not knowing if you can make it to a safe spot in time", value: 1 },
+            { text: "you dont think twice and immediately speed off to the meadow.", value: -1 }
+        ]
+    },
+    {
+        question: "we reach the meadows and you hear the egg crack. how do you feel?!",
+        answers: [
+            { text: "excited! this is my first time witnessing an animal birth!", value: 1 },
+            { text: "scared. i hope it comes out healthy…", value: -1 }
+        ]
+    },
+    {
+        question: "the baby chick pops its head out. but instead of imprinting onto the chicken who saved it.. it seems to think youre its mom! you exchange glances with the chicken.",
+        answers: [
+            { text: "its okay. i can take it home and raise it. this will be super fun!", value: 1 },
+            { text: "youre a chicken. i think you should take it. i dont have experience taking care of an animal!", value: -1 }
+        ]
+    },
+    {
+        question: "The chicken believes you deserve the right to name the baby chick. ",
+        answers: [
+            { text: "“It’s okay! I am just glad I was able to help.”", value: 1 },
+            { text: "“I’d love to!”", value: -1 }
+        ]
+    },
+    {
+        question: "The chicken thanks you. Before it goes off on its way, it tells you it actually has a family on its own and would love to stop by someday with them.",
+        answers: [
+            { text: "I would love to meet them! This was such a fun experience.", value: 1 },
+            { text: "I’m okay! I think this experience was surreal enough..", value: -1 }
+        ]
+    },
+    {
+        question: "You drive back home after an eventful day feeling a rush of emotions.",
+        answers: [
+            { text: "“I can’t wait to tell my friends and family about what happened today!”", value: 1 },
+            { text: "“I can’t wait to get home and relax.”", value: -1 }
+        ]
+    },
 ];
 
 let currentQuestionIndex = 0;
@@ -61,7 +110,7 @@ function loadQuestion(index) {
 
     // Load new question
     const question = questions[index];
-    questionContainer.innerText = question.question;
+    questionContainer.innerText = (currentQuestionIndex + 1) + ". " + question.question;
 
     // Load new answers
     question.answers.forEach((answer, i) => {
