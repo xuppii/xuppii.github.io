@@ -9,33 +9,40 @@ document.getElementById('startButton').onclick = () => {
 
 const questions = [
     {
-        question: "are you extroverted or introverted?",
+        question: "you are a new driver going on a scenic drive. all of a sudden you see a chicken crossing the road struggling to walk with a gigantic egg in its arms. what do u do?",
         answers: [
-            { text: "extroverted", value: 1 },
-            { text: "introverted", value: -1 }
+            { text: "Observe the chicken first. I wonder where it got such a big egg from? ", value: 1 },
+            { text: "It looks like it needs help! I should get closer.", value: -1 }
         ]
     },
     {
-        question: "sensing or intuition",
+        question: "You stop your car in front of the chicken and start walking towards it. What do you say?",
         answers: [
-            { text: "sensing", value: 1 },
-            { text: "intuition", value: -1 }
+            { text: "ask the chicken why its crossing the road", value: 1 },
+            { text: "tell the chicken its dangerous and to take a safer path", value: -1 }
         ]
     },
     {
-        question: "thinking or feeling",
+        question: "the chicken asks you why you are being so kind because of the constant honking it has encountered thus far.",
         answers: [
-            { text: "thinking", value: 1 },
-            { text: "feeling", value: -1 }
+            { text: "you can tell the chicken is just trying its best to keep the egg safe.", value: 1 },
+            { text: "you were just curious, you didn’t think you were being kind.", value: -1 }
         ]
     },
     {
-        question: "judge or percieve",
+        question: "the chicken tells you that it found this egg on the side of the road and its going to hatch soon, but it needs a safe place to put it down. how do you respond?",
         answers: [
-            { text: "judge", value: 1 },
-            { text: "percieve", value: -1 }
+            { text: "“dont worry! my backyard is spacious!”", value: 1 },
+            { text: "“oh i really hope you find somewhere! theres this park pretty close by.”", value: -1 }
         ]
-    }
+    },
+    {
+        question: "“thank you for your help! do you think you could take me by car? i’m exhausted carrying this egg”",
+        answers: [
+            { text: "You’re hesitant to agree. What if this is a trap? ", value: 1 },
+            { text: "“Of course!” You are excited to see a new life be born into this world.", value: -1 }
+        ]
+    },
 ];
 
 let currentQuestionIndex = 0;
