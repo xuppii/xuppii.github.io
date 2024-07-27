@@ -102,16 +102,22 @@ let mbti_numbers = [0,0,0,0]
 function loadQuestion(index) {
     const questionContainer = document.getElementById('question');
     const answersContainer = document.getElementById('answers');
-    const resultsConatiner = document.getElementById('result')
+    //const resultsConatiner = document.getElementById('result')
+    //const wholeDiv = document.getElementById('question-container');
 
+    const img = document.createElement('img')
+    img.src = 'chick.png';
+    //wholeDiv.innerHTML = '';
+    
+    // if (currentQuestionIndex === 1){wholeDiv.appendChild(img); console.log("hi")}
     // Clear previous question and answers
     questionContainer.innerHTML = '';
     answersContainer.innerHTML = '';
-
+    
     // Load new question
     const question = questions[index];
     questionContainer.innerText = (currentQuestionIndex + 1) + ". " + question.question;
-
+    //questionContainer.appendChild(img);
     // Load new answers
     question.answers.forEach((answer, i) => {
         const button = document.createElement('button');

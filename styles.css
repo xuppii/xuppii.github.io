@@ -57,6 +57,16 @@ h1{
     height: 100%;
     flex-direction: column;
 }
+.center-button
+{
+    display: flex;
+    flex-direction: column;
+}
+.center-question
+{
+    display:flex;
+    justify-content:center;
+}
 .center{
     display: flex;
     justify-content: center; /* Center horizontally */
