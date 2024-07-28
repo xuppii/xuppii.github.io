@@ -20,6 +20,7 @@
     color: 0;
     border: none;
     border-radius: 15px;
+    font-size: 0.9em;
 }
 .answer-button:hover{
     background-color:lightpink;
