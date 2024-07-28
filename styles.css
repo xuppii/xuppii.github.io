@@ -4,11 +4,11 @@
     margin: 20px;
 }
 #question {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 39px;
     padding-left: 39px;
     padding-right: 30px;
-    /*! font-weight: bold; */
+    font-weight: bold;
 }
 .answer-button {
     display: inline-block; 
@@ -16,10 +16,13 @@
     padding: 10px;
     font-size: 1em;
     cursor: pointer;
-    background-color: lightpink;
+    background-color: #ffe0e0;
     color: 0;
     border: none;
     border-radius: 15px;
+}
+.answer-button:hover{
+    background-color:lightpink;
 }
 h1{
     margin:0px;
@@ -59,8 +62,8 @@ h1{
 }
 .center-answers{
     /*! display: flex; */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     /*! height: 66%; */
     flex-direction: column;
     max-width: 400px;
@@ -77,21 +80,15 @@ h1{
     display: flex;
     flex-direction: column;
     padding-bottom: 14px;
-    padding-top: ;
     padding-left: 20px;
     padding-right: 20px;
     /*! background-color: ; */
 }
-.center-question
-{
-    /*! display:flex; */
-    /*! justify-content:center; */
-    /*! align-items: center; */
-}
+
 .center{
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center; 
+    align-items: center; 
     height: 100%;
 }
 body, html {
@@ -110,7 +107,7 @@ body, html {
 
 .egg-button img {
     width: 100px;
-    height: auto; /* Maintain aspect ratio */
+    height: auto; 
     animation: shake 0.3s infinite; 
     /* animation-iteration-count: infinite;  */
     /* animation-timing-function: ease-in-out;  */
@@ -118,7 +115,7 @@ body, html {
 }
 
 .egg-button img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1); 
     transition: transform 0.3s;
     animation-play-state:paused;
 }
