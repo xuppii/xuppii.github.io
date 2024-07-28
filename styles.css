@@ -17,10 +17,11 @@
     font-size: 1em;
     cursor: pointer;
     background-color: #ffe0e0;
-    color: 0;
+    color: rgb(0,0,0);
     border: none;
     border-radius: 15px;
     font-size: 0.9em;
+
 }
 .answer-button:hover{
     background-color:lightpink;
