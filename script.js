@@ -106,7 +106,7 @@ function loadQuestion(index) {
     //const wholeDiv = document.getElementById('question-container');
 
     const img = document.createElement('img')
-    img.src = 'chick.png';
+    img.src = 'images/chick.png';
     //wholeDiv.innerHTML = '';
     
     // if (currentQuestionIndex === 1){wholeDiv.appendChild(img); console.log("hi")}
