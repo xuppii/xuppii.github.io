@@ -258,30 +258,30 @@ function replaceChar(str, index, char) {
     strArray[index] = char;
     return strArray.join('');
 }
-function hoverImg(element, imgSrc) {
-    element.querySelector('img').src = imgSrc;
-}
-function shakePeriodically() {
-    const egg = document.querySelector('.egg-button img');
-    if(!egg.matches(':hover')){
-        egg.style.animationPlayState = 'running';
-    }
-    setTimeout(() => {
-        if(!egg.matches(':hover')){
-            egg.style.animationPlayState = 'paused';
-        }
-    }, 1000); // Duration of the shake
-}
+// function hoverImg(element, imgSrc) {
+//     element.querySelector('img').src = imgSrc;
+// }
+// function shakePeriodically() {
+//     const egg = document.querySelector('.egg-button img');
+//     if(!egg.matches(':hover')){
+//         egg.style.animationPlayState = 'running';
+//     }
+//     setTimeout(() => {
+//         if(!egg.matches(':hover')){
+//             egg.style.animationPlayState = 'paused';
+//         }
+//     }, 1000); // Duration of the shake
+// }
 
-// Shake the egg every 5 seconds
-const egg = document.querySelector('.egg-button img');
-egg.addEventListener('mouseenter', () => {
-    egg.style.animationPlayState = 'paused';
-});
-egg.addEventListener('mouseleave', () => {
-    shakePeriodically(); // Resume shaking immediately after hover ends
-});
+// // Shake the egg every 5 seconds
+// const egg = document.querySelector('.egg-button img');
+// egg.addEventListener('mouseenter', () => {
+//     egg.style.animationPlayState = 'paused';
+// });
+// egg.addEventListener('mouseleave', () => {
+//     shakePeriodically(); // Resume shaking immediately after hover ends
+// });
 
-setInterval(shakePeriodically, 1500);
+// setInterval(shakePeriodically, 1500);
 // Load the first question initially
 loadQuestion(currentQuestionIndex);

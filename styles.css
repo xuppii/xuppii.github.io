@@ -148,3 +148,18 @@ body, html {
     transition: background-image 0.3s ease-in-out, background-color 0.3s ease-in-out;
     
 } */
+ .start-container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+ }
+ .start-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .resize{
+    width:60px;
+    height:auto;
+ }
