@@ -105,8 +105,8 @@ function loadQuestion(index) {
     //const resultsConatiner = document.getElementById('result')
     //const wholeDiv = document.getElementById('question-container');
 
-    const img = document.createElement('img')
-    img.src = 'images/chick.png';
+    // const img = document.createElement('img')
+    // img.src = 'images/chick.png';
     //wholeDiv.innerHTML = '';
     
     // if (currentQuestionIndex === 1){wholeDiv.appendChild(img); console.log("hi")}
@@ -133,64 +133,15 @@ function loadQuestion(index) {
             if (currentQuestionIndex < questions.length - 1) {
                 currentQuestionIndex++;
                 loadQuestion(currentQuestionIndex);
-            } //else {
-            //     console.log(selectedAnswers)
-            //     console.log(mbti_numbers)
-            //     selectedAnswers.forEach((value,mbti_letter_index) => {
-            //         // mbti_numbers[answer.mbti_letter_index] += value;
-            //         // console.log(mbti_numbers);
-            //         // console.log(answer.mbti_letter_index);
-            //         // if(mbti_letter_index == 0){
-            //         //     if(value > 0){
-            //         //         mbti_numbers[0]++;
-            //         //         //mbti = replaceChar(mbti, i, 'E');
-            //         //     }
-            //         //     else if(value < 0){
-            //         //         mbti_numbers[0]--;
-            //         //         //mbti = replaceChar(mbti, i, 'I');
-            //         //     }
-            //         // }
-            //         // else if(mbti_letter_index == 1){
-            //         //     if(value > 0){
-            //         //         mbti_numbers[1]++;
-            //         //         //mbti = replaceChar(mbti, i, 'S');
-            //         //     }
-            //         //     else if(value < 0){
-            //         //         mbti_numbers[1]--;
-            //         //         //mbti = replaceChar(mbti, i, 'N');
-            //         //     }
-            //         // }
-            //         // else if(mbti_letter_index == 2){
-            //         //     if(value > 0){
-            //         //         mbti_numbers[2]++;
-            //         //         //mbti = replaceChar(mbti, i, 'T');
-            //         //     }
-            //         //     else if(value < 0){
-            //         //         mbti_numbers[2]--;
-            //         //         //mbti = replaceChar(mbti, i, 'F');
-            //         //     }
-            //         // }
-            //         // else if(i == 3){
-            //         //     if(value > 0){
-            //         //         mbti_numbers[3]++;
-            //         //         //mbti = replaceChar(mbti, i, 'J');
-            //         //     }
-            //         //     else if(value < 0){
-            //         //         mbti_numbers[3]--;
-            //         //         //mbti = replaceChar(mbti, i, 'P');
-            //         //     }
-            //         // }
-            //     })
-               // console.log(mbti_numbers);
-                //let mbti = mbti_calculate(mbti_numbers);
+            }
             else{
-                let mbti = mbti_calculate(mbti_numbers);
+                let {mbti, mbti_index} = mbti_calculate(mbti_numbers);
                 document.getElementById('question-container').classList.replace('visible', 'hidden');
                 document.getElementById('question-container').classList.remove('center-answers');
                 document.getElementById('result').classList.replace('hidden', 'visible');
                 //questionContainer.innerText = mbti;
                 console.log(mbti);
-
+                console.log(mbti_index);
                 answersContainer.innerHTML = '';
                 mbti_numbers = [0,0,0,0]
                 const button_result = document.getElementById('restart-button');
@@ -212,12 +163,14 @@ function loadQuestion(index) {
 function mbti_calculate(array)
 {
     let mbti = "";
+    let mbti_index = 0;
     array.forEach((value,i) =>
     {
         if(i == 0)
         {
             if(value > 0){
                 mbti += "E"
+                mbti_index += 8;
             }
             else{
                 mbti += "I"
@@ -227,6 +180,7 @@ function mbti_calculate(array)
         {
             if(value > 0){
                 mbti += "S"
+                mbti_index += 4;
             }
             else{
                 mbti += "N"
@@ -236,6 +190,7 @@ function mbti_calculate(array)
         {
             if(value > 0){
                 mbti += "T"
+                mbti_index += 2;
             }
             else{
                 mbti += "F"
@@ -245,14 +200,33 @@ function mbti_calculate(array)
         {
             if(value > 0){
                 mbti += "J"
+                mbti_index += 1;
             }
             else{
                 mbti += "P"
             }
         }
     })
-    return mbti;
+    return {mbti, mbti_index};
 }
+/*
+    0: INFP
+    1: INFJ
+    2: INTP
+    3: INTJ
+    4: ISFP
+    5: ISFJ
+    6: ISTP
+    7: ISTJ
+    8: ENFP
+    9: ENFJ
+    10: ENTP
+    11: ENTJ
+    12: ESFP
+    13: ESFJ
+    14: ESTP
+    15: ESTJ
+*/
 function replaceChar(str, index, char) {
     let strArray = str.split('');
     strArray[index] = char;
