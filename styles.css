@@ -5,6 +5,10 @@
 #question-container {
     margin: 20px;
 }
+.question-image{
+    height:22vh;
+    padding:20px;
+}
 #question {
     font-size: 1.2em;
     margin-bottom: 39px;
@@ -29,6 +33,26 @@
 .answer-button:hover{
     background-color:#fb6ab8;
     color:white;
+}
+
+.result-button:hover{
+    background-color:#bc64ff;
+    color:white;
+}
+
+.result-button {
+    display: inline-block;
+    margin: 5px 1px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    font-family:"VT323";
+    color: #ffd864;
+    border: 1px solid #ffd864;
+    border-radius: 15px;
+    border-width: 1px;
+    font-size: 1em;
+    transition-duration: 100ms;
 }
 h1{
     margin:0px;
@@ -67,7 +91,7 @@ h1{
     align-items: center;
 }
 .center-answers{
-    /*! display: flex; */
+    display: flex;
     justify-content: center; 
     align-items: center; 
     /*! height: 66%; */

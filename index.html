@@ -6,7 +6,7 @@
     <title>egg</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="color">
+<body class="color" id="bg">
     <div id="home" class="visible center">
         <div class="home-text">
             <div class = "start-container">
@@ -24,9 +24,7 @@
         </div>
     </div>
     <div id="question-container" class="hidden">
-        <div style="max-width: 20%;transform: translateX(200%);">
-            <img src="images/chick_nobg.gif" class="image">
-        </div>
+        <img src="images/question_images/1.png" class="question-image" id="question-images">
         <div id="question" class="center-question"></div>
         <div id="answers" class="center-button"></div>
     </div>
@@ -35,7 +33,7 @@
             <img src="images/poached.png" class="image">
         </div>
         <div class="restart-text">
-            <button class="answer-button" id="restart-button">Restart</button>
+            <button class="result-button" id="restart-button">Restart</button>
         </div>
     </div>
     

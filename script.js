@@ -102,6 +102,9 @@ let mbti_numbers = [0,0,0,0]
 function loadQuestion(index) {
     const questionContainer = document.getElementById('question');
     const answersContainer = document.getElementById('answers');
+    const questionImage = document.getElementById('question-images');
+    console.log(questionImage);
+    console.log(questionContainer);
     //const resultsConatiner = document.getElementById('result')
     //const wholeDiv = document.getElementById('question-container');
 
@@ -113,10 +116,11 @@ function loadQuestion(index) {
     // Clear previous question and answers
     questionContainer.innerHTML = '';
     answersContainer.innerHTML = '';
-    
+    questionImage.src = '';
     // Load new question
     const question = questions[index];
     questionContainer.innerText = (currentQuestionIndex + 1) + ". " + question.question;
+    questionImage.src = 'images/question_images/' + (currentQuestionIndex + 1) + '.png';
     //questionContainer.appendChild(img);
     // Load new answers
     question.answers.forEach((answer, i) => {
@@ -136,6 +140,7 @@ function loadQuestion(index) {
             }
             else{
                 let {mbti, mbti_index} = mbti_calculate(mbti_numbers);
+                document.getElementById('bg').classList.remove('color');
                 document.getElementById('question-container').classList.replace('visible', 'hidden');
                 document.getElementById('question-container').classList.remove('center-answers');
                 document.getElementById('result').classList.replace('hidden', 'visible');
@@ -152,6 +157,7 @@ function loadQuestion(index) {
                     document.getElementById('result').classList.replace('visible', 'hidden');
                     document.getElementById('home').classList.replace('hidden', 'visible');
                     document.getElementById('home').classList.add('center');
+                    document.getElementById('bg').classList.add('color');
                     loadQuestion(currentQuestionIndex);
                 }
                 //resultsConatiner.appendChild(button_result);
