@@ -143,7 +143,11 @@ function loadQuestion(index) {
                 document.getElementById('bg').classList.remove('color');
                 document.getElementById('question-container').classList.replace('visible', 'hidden');
                 document.getElementById('question-container').classList.remove('center-answers');
+                const resultImage = document.getElementById('result-images');
+                
+                resultImage.src = 'images/result_images/' + (mbti_index) + '.png';
                 document.getElementById('result').classList.replace('hidden', 'visible');
+
                 //questionContainer.innerText = mbti;
                 console.log(mbti);
                 console.log(mbti_index);
@@ -216,23 +220,23 @@ function mbti_calculate(array)
     return {mbti, mbti_index};
 }
 /*
-    0: INFP
-    1: INFJ
-    2: INTP
-    3: INTJ
-    4: ISFP
-    5: ISFJ
-    6: ISTP
-    7: ISTJ
-    8: ENFP
-    9: ENFJ
-    10: ENTP
-    11: ENTJ
-    12: ESFP
-    13: ESFJ
-    14: ESTP
-    15: ESTJ
-*/
+    0: INFP, poached
+    1: INFJ, steamed
+    2: INTP, century egg
+    3: INTJ, tomato
+    4: ISFP, soft-boiled
+    5: ISFJ, scrambled
+    6: ISTP, egg tofu
+    7: ISTJ, hard-boiled
+    8: ENFP, omelet
+    9: ENFJ, benedict
+    10: ENTP, egg salad
+    11: ENTJ, sunny side
+    12: ESFP, marinated
+    13: ESFJ, deviled
+    14: ESTP, baked egg
+    15: ESTJ, tamagoyaki
+*/ //century, eggtofu , baked egg
 function replaceChar(str, index, char) {
     let strArray = str.split('');
     strArray[index] = char;
