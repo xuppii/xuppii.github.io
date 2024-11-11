@@ -73,8 +73,7 @@ h1{
     display:flex;
     justify-content:center;
     align-items: center;
-    height: 83vh; 
-    padding-top: 46px;
+    height: 80vh; 
 }
 .restart-text{
     display:flex;
@@ -186,4 +185,12 @@ body, html {
  .resize{
     width:60px;
     height:auto;
+ }
+
+ .center-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
  }

@@ -147,7 +147,7 @@ function loadQuestion(index) {
                 
                 resultImage.src = 'images/result_images/' + (mbti_index) + '.png';
                 document.getElementById('result').classList.replace('hidden', 'visible');
-
+                document.getElementById('result').classList.add('center-results');
                 //questionContainer.innerText = mbti;
                 console.log(mbti);
                 console.log(mbti_index);
@@ -160,6 +160,7 @@ function loadQuestion(index) {
                     currentQuestionIndex = 0;
                     document.getElementById('result').classList.replace('visible', 'hidden');
                     document.getElementById('home').classList.replace('hidden', 'visible');
+                    document.getElementById('result').classList.remove('center-results');
                     document.getElementById('home').classList.add('center');
                     document.getElementById('bg').classList.add('color');
                     loadQuestion(currentQuestionIndex);
